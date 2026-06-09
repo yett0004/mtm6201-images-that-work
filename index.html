@@ -17,7 +17,8 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="#" class="logo-link">
-        <img src="images/ridgeline-logo.svg" alt="" class="logo">
+        <!-- Task 1: Swapped in the optimized logo file and added descriptive alt text. -->
+        <img src="images/ridgeline-logo-opt.svg" alt="Ridgeline wordmark" class="logo">
       </a>
       <nav class="site-nav">
         <a href="#">Gear</a>
@@ -39,7 +40,18 @@
     with a real <img> so srcset can work.
   ============================================================ -->
   <section class="hero">
-    <!-- Task 3: Add your <img> element here, before hero__content -->
+    <!-- Task 3: Real image added so the browser can choose the best WebP size. -->
+    <img
+      class="hero-photo"
+      src="images/hero.png"
+      srcset="images/hero-400.webp 400w,
+              images/hero-800.webp 800w,
+              images/hero-1200.webp 1200w,
+              images/hero-1920.webp 1920w"
+      sizes="100vw"
+      alt="A hiker walking through a misty mountain trail"
+    >
+
     <div class="hero__content">
       <p class="hero__label">Spring / Summer 2026</p>
       <h1 class="hero__title">Built for<br>the Trail</h1>
@@ -63,8 +75,8 @@
 
       <article class="gear-card">
         <div class="gear-card__image">
-          <!-- Task 4: Update src to product-jacket.webp -->
-          <img src="images/product-jacket.png" alt="Ridgeline Apex Shell Jacket in olive green">
+          <!-- Task 4: Product image now uses the optimized WebP file. -->
+          <img src="images/product-jacket.webp" alt="Ridgeline Apex Shell Jacket in olive green">
         </div>
         <div class="gear-card__body">
           <span class="gear-card__tag">Outerwear</span>
@@ -79,8 +91,8 @@
 
       <article class="gear-card">
         <div class="gear-card__image">
-          <!-- Task 4: Update src to product-boots.webp -->
-          <img src="images/product-boots.png" alt="Ridgeline Summit Mid hiking boots in brown leather">
+          <!-- Task 4: Product image now uses the optimized WebP file. -->
+          <img src="images/product-boots.webp" alt="Ridgeline Summit Mid hiking boots in brown leather">
         </div>
         <div class="gear-card__body">
           <span class="gear-card__tag">Footwear</span>
@@ -112,8 +124,8 @@
 
         <article class="note-card">
           <div class="note-card__image">
-            <!-- Task 5: Update src to note-rideau.webp -->
-            <img src="images/note-rideau.png" alt="A hiker crossing a wooden bridge on the Rideau Trail">
+            <!-- Task 5: Blog image now uses the optimized WebP file. -->
+            <img src="images/note-rideau.webp" alt="A hiker crossing a wooden bridge on the Rideau Trail">
           </div>
           <div class="note-card__body">
             <div class="note-card__meta">
@@ -128,8 +140,8 @@
 
         <article class="note-card">
           <div class="note-card__image">
-            <!-- Task 5: Update src to note-gatineau.webp -->
-            <img src="images/note-gatineau.png" alt="Snow-covered trees on a Gatineau Hills winter trail">
+            <!-- Task 5: Blog image now uses the optimized WebP file. -->
+            <img src="images/note-gatineau.webp" alt="Snow-covered trees on a Gatineau Hills winter trail">
           </div>
           <div class="note-card__body">
             <div class="note-card__meta">
@@ -144,8 +156,8 @@
 
         <article class="note-card">
           <div class="note-card__image">
-            <!-- Task 5: Update src to note-supply.webp -->
-            <img src="images/note-supply.png" alt="A textile factory floor with workers at sewing machines">
+            <!-- Task 5: Blog image now uses the optimized WebP file. -->
+            <img src="images/note-supply.webp" alt="A textile factory floor with workers at sewing machines">
           </div>
           <div class="note-card__body">
             <div class="note-card__meta">
@@ -172,7 +184,13 @@
     The banner is a CSS background image — same fix as Task 3.
   ============================================================ -->
   <section class="landscape-banner">
-    <!-- Task 7: Add your <picture> element here, before landscape-banner__content -->
+    <!-- Task 7: Picture element serves the portrait crop on small screens and the wide crop on larger screens. -->
+    <picture class="banner-art">
+      <source media="(max-width: 768px)" srcset="images/banner-portrait.webp">
+      <source media="(min-width: 769px)" srcset="images/banner-wide.webp">
+      <img src="images/banner-wide.webp" alt="A misty forest trail at dawn">
+    </picture>
+
     <div class="landscape-banner__content">
       <h2>Every trail<br>has a story.</h2>
       <p>Ridgeline gear is built for the ones worth telling.</p>
